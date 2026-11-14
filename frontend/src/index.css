@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+:root {
+  --bg-main: #090d16;
+  --bg-card: #0f172a;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-card: rgba(255, 255, 255, 0.1);
+  --border-card-hover: rgba(16, 185, 129, 0.35);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: #f1f5f9;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(circle at 10% 0%, rgba(16, 185, 129, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 90% 10%, rgba(99, 102, 241, 0.06) 0%, transparent 45%),
+    radial-gradient(circle at 50% 90%, rgba(6, 182, 212, 0.04) 0%, transparent 50%);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Pulse animation */
+@keyframes pulseGlow {
+  0% { transform: scale(0.92); opacity: 0.8; }
+  50% { transform: scale(1.08); opacity: 1; filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.7)); }
+  100% { transform: scale(0.92); opacity: 0.8; }
+}
+
+.radar-live-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #10b981;
+  animation: pulseGlow 2s infinite ease-in-out;
+  display: inline-block;
+}
+
+/* Modern Card Backgrounds */
+.ui-card {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border-card);
+  border-radius: 1rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ui-card:hover {
+  border-color: var(--border-card-hover);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px rgba(16, 185, 129, 0.08);
+  transform: translateY(-2px);
+}
+
+.ui-card-danger {
+  background: rgba(28, 14, 23, 0.65);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(244, 63, 94, 0.25);
+  border-radius: 1rem;
+}
+
+/* Custom Select styling */
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 0.85em;
+  padding-right: 2rem !important;
+}
+
+/* Button styles */
+.btn-apply-primary {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.55rem 1.15rem;
+  border-radius: 0.625rem;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 10px rgba(16, 185, 129, 0.25);
+  font-size: 0.8125rem;
+}
+
+.btn-apply-primary:hover {
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.45);
+  transform: translateY(-1px);
+}
+
+.btn-ghost-action {
+  background: rgba(30, 41, 59, 0.5);
+  color: #cbd5e1;
+  font-weight: 500;
+  padding: 0.5rem 0.95rem;
+  border-radius: 0.625rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: all 0.2s ease;
+  font-size: 0.8125rem;
+}
+
+.btn-ghost-action:hover {
+  background: rgba(51, 65, 85, 0.7);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.16);
+}
