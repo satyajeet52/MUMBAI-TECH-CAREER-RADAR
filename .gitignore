@@ -43,3 +43,4 @@ yarn-error.log*
 # Uploads directory contents
 backend/uploads/*
 !backend/uploads/.gitkeep
+
